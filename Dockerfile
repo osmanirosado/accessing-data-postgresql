@@ -60,7 +60,6 @@ RUN adduser \
     app
 USER app
 
-RUN ls /home/
 WORKDIR /home/app
 
 # Copy the executable from the "package" stage.
