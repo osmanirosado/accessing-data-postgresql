@@ -22,10 +22,16 @@ Add a user
 ```shell
 curl http://localhost:8080/demo/add -d name=Julia -d email=julia@someemailprovider.com
 ```
+```
+Saved
+```
 
 Get all users
 ```shell
 curl http://localhost:8080/demo/all
+```
+```
+[{"id":1,"name":"Julia","email":"julia@someemailprovider.com"}]
 ```
 
 ## References
