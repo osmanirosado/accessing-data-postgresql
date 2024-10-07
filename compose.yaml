@@ -2,6 +2,9 @@ services:
   app:
     build:
       context: .
+    secrets:
+      # Grant access to db-password file
+      - db-password
     ports:
       - "127.0.0.1:8080:8080"
     depends_on:
@@ -11,10 +14,14 @@ services:
   db:
     image: postgres:latest
     user: postgres
+    secrets:
+      # Grant access to db-password file
+      - db-password
     environment:
       - POSTGRES_DB=demo
-      - POSTGRES_PASSWORD=secret
       - POSTGRES_USER=postgres
+      # Configure postgresql to get the password from db-password file
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
     ports:
       - "127.0.0.1:5432:5432"
     healthcheck:
@@ -22,3 +29,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+secrets:
+  # Define db-password file as a secret container
+  db-password:
+    file: db/password.txt
