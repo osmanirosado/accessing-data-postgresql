@@ -1,0 +1,15 @@
+
+spring:
+  application:
+    name: accessing-data-postgresql
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: postgres
+    password: secret
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

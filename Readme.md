@@ -37,6 +37,7 @@ curl http://localhost:8080/demo/all
 ## References
 
 - [Accessing data with MySQL - Spring Boot Guide](https://spring.io/guides/gs/accessing-data-mysql)
+- [Using application.yml vs application.properties in Spring Boot](https://www.baeldung.com/spring-boot-yaml-vs-properties)
 - [Profiles - Spring Boot Reference](https://docs.spring.io/spring-boot/reference/features/profiles.html)
 - [Profile Specific Files - Spring Boot Reference](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific)
 - [Containerize a Java application - Docker Docs Guide](https://docs.docker.com/guides/language/java/containerize/)
