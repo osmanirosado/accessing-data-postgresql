@@ -4,14 +4,16 @@ spring:
     name: accessing-data-postgresql
 
   config:
-    # Import db-password file content as an environment variable
+    # Import db.password file content as an environment variable
     import: optional:configtree:/run/secrets/
 
   datasource:
-    url: ${JDBC_DB_URL:jdbc:postgresql://db:5432/demo}
-    username: ${DB_USER:postgres}
+    # jdbc.db.url "matches" with JDBC_DB_URL environment variable
+    url: ${jdbc.db.url:jdbc:postgresql://db:5432/demo}
+    # db.user "matches" with DB_USER environment variable
+    username: ${db.user:postgres}
     # Use db-password secret value
-    password: ${db-password}
+    password: ${db.password}
     driver-class-name: org.postgresql.Driver
 
   jpa:
