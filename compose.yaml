@@ -2,6 +2,9 @@ services:
   app:
     build:
       context: .
+    environment:
+      - JDBC_DB_URL=jdbc:postgresql://db:5432/demo
+      - DB_USER=postgres
     secrets:
       # Grant access to db-password file
       - db-password

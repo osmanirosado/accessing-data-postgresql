@@ -8,8 +8,8 @@ spring:
     import: optional:configtree:/run/secrets/
 
   datasource:
-    url: jdbc:postgresql://db:5432/demo
-    username: postgres
+    url: ${JDBC_DB_URL:jdbc:postgresql://db:5432/demo}
+    username: ${DB_USER:postgres}
     # Use db-password secret value
     password: ${db-password}
     driver-class-name: org.postgresql.Driver
